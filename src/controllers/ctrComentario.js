@@ -54,6 +54,7 @@ await comentario
 
 //update= actualizar datos
 ctrComentario.actualizar= async(req, res) =>{
+    const {_id,...body} = req.body
     await comentario
     .updateOne({_id:_id},{ $set : body})
     .then(data => res.json(data))
